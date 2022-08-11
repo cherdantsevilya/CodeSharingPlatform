@@ -25,31 +25,66 @@ ___
 Request `POST /api/code/new` with the following body:
 
 ```json
-{ "code": "class Code { ..." }
+{ 
+    "code": "class Code { ...",
+    "time": 0,
+    "views": 0
+}
 ```
 
-Response: `{ "id" : "1" }`.
+Response: `{ "id" : "7dc53df5-703e-49b3-8670-b1c468f47f1f" }`.
 
 Another request `POST /api/code/new` with the following body:
 
 ```json
-{ "code": "public static void ..." }
+{ 
+    "code": "public static void ...",
+    "time": 0,
+    "views": 0
+}
 ```
 
-Response: `{ "id" : "2" }`.
+Response: `{ "id" : "e6780274-c41c-4ab4-bde6-b32c18b4c489" }`.
+
+Request `POST /api/code/new` with the following body
+
+```json
+{
+    "code": "Secret code",
+    "time": 5000,
+    "views": 5
+}
+```
+
+Response: `{ "id" : "2187c46e-03ba-4b3a-828b-963466ea348c" }`.
 
 <br>
 
 ### **Example 2:**
 
-Request: `GET /api/code/1`
+Request: `GET /api/code/2187c46e-03ba-4b3a-828b-963466ea348c`
 
 Response:
 
 ```json
 {
-    "code": "class Code { ...",
-    "date": "2022-08-11 22:32:20"
+    "code": "Secret code",
+    "date": "2022-08-11 22:46:45",
+    "time": 4995,
+    "views": 4
+}
+```
+
+Another request `GET /api/code/2187c46e-03ba-4b3a-828b-963466ea348c`
+
+Response:
+
+```json
+{
+    "code": "Secret code",
+    "date": "2022-08-11 22:47:45",
+    "time": 4991,
+    "views": 3
 }
 ```
 
@@ -57,16 +92,11 @@ Response:
 
 ### **Example 3:**
 
-Request: `GET /api/code/2`
+Request: `GET /code/2187c46e-03ba-4b3a-828b-963466ea348c`
 
 Response:
 
-```json
-{
-    "code": "public static void ...",
-    "date": "2022-08-11 22:33:19"
-}
-```
+![code](https://user-images.githubusercontent.com/70847388/184201675-2c6cbcb9-de31-481d-9028-ca10e5b59778.png)
 
 <br>
 
@@ -80,11 +110,15 @@ Response:
 [
     {
         "code": "public static void ...",
-        "date": "2022-08-11 22:33:19"
+        "date": "2022-08-11 22:33:19",
+        "time": 0,
+        "views": 0
     },
     {
         "code": "class Code { ...",
-        "date": "2022-08-11 22:32:20"
+        "date": "2022-08-11 22:32:20",
+        "time": 0,
+        "views": 0
     }
 ]
 ```
