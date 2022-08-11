@@ -49,7 +49,7 @@ Response:
 ```json
 {
     "code": "class Code { ...",
-    "date": "2020/05/05 11:59:12"
+    "date": "2022-08-11 22:32:20"
 }
 ```
 
@@ -63,8 +63,8 @@ Response:
 
 ```json
 {
-    "code": "class Code { ...",
-    "date": "2020/05/05 12:00:43"
+    "code": "public static void ...",
+    "date": "2022-08-11 22:33:19"
 }
 ```
 
@@ -80,11 +80,11 @@ Response:
 [
     {
         "code": "public static void ...",
-        "date": "2020/05/05 12:00:43"
+        "date": "2022-08-11 22:33:19"
     },
     {
         "code": "class Code { ...",
-        "date": "2020/05/05 11:59:12"
+        "date": "2022-08-11 22:32:20"
     }
 ]
 ```
@@ -96,3 +96,6 @@ Response:
 Request: `GET /code/latest`
 
 Response:
+
+![latest](https://user-images.githubusercontent.com/70847388/184197421-cd59e162-be73-4e00-b65f-0e098e0510b7.png)
+
